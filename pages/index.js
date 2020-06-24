@@ -1,203 +1,150 @@
 import Head from 'next/head'
+import  React,{useState,useEffect} from 'react'
+import Link from 'next/link'
+import Nav from '../component/nav'
+import DbData from "../Db.json"
+import StaticDBAR from "../StaticDBAR.json"
+// import Footer from '../component/Footer'
 
-const Home = () => (
-  <div className="container">
+// https://codesandbox.io/s/react-hooks-search-filter-4gnwc?file=/src/index.js:1460-1473
+const Home = () => {
+  const [companies, setCompanies] = useState([]);
+  const [search, setSearch] = useState("");
+  const [filteredCompanies, setFilteredCompanies] = useState([]);
+  const myLang= StaticDBAR.index;
+  useEffect(() => {
+        setCompanies(DbData);
+  }, []);
+
+  useEffect(() => {
+    setFilteredCompanies(
+      companies.filter(company =>
+        company.companyName.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  }, [search, companies]);
+
+  return (
+    <div className="container">
     <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
+    <meta charset="UTF-8"/>
+    <meta name="description" content="سجل شركتك/جهتك معنا مجانا بهدف الحفاظ على صحتك وصحة من حولك (#حافظ_على_المسافة_الامنه #دورك_محفوظ #صحتك_في_بعدك #الدايرة_بتقرب"/>
+    <meta name="keywords" content="bldor,بالدور,بلدور,بدور,دورك,دوري,baldor,beldor,bldoor,beldoor,baldoor,الصحة,صحتي,صحتك,تباعد"/>
+    <meta name="author" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel ='stylesheet' href='./css/main.css'/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="icon" href="../image/favicon.jpeg"/>
+    <title>BLdOR | بالدور</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
     </Head>
 
     <main>
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
-
-      <p className="description">
-        Get started by editing <code>pages/index.js</code>
-      </p>
-
-      <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
-
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://zeit.co/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
-        </a>
-      </div>
+    <Nav/>
+    <section>
+        <h2>{myLang.title1}</h2>
+      <input
+        type="text"
+        placeholder="Search Companies..."
+        onChange={e => setSearch(e.target.value)}
+        />
+      {filteredCompanies.map((company, idx) => (
+        <CountryDetail key={idx} {...company} />
+        ))}
+    </section>
     </main>
-
-    <footer>
-      <a
-        href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/zeit.svg" alt="ZEIT Logo" />
-      </a>
-    </footer>
-
+    {/* <Footer/> */}
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed8f438791ae46a"></script>
     <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
+      section{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer {
-        width: 100%;
-        height: 100px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .title a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      .title a:hover,
-      .title a:focus,
-      .title a:active {
-        text-decoration: underline;
-      }
-
-      .title {
         margin: 0;
-        line-height: 1.15;
-        font-size: 4rem;
+        flex-direction: column;
+        
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 1.4rem;
       }
-
-      .title,
-      .description {
+      
+      h2{
+        font-size: xx-large;
+        
+      }
+      
+      a{
+        text-decoration: none;
+        color: black;
+        background: #fff;
         text-align: center;
-      }
-
-      .description {
-        line-height: 1.5;
-        font-size: 1.5rem;
-      }
-
-      code {
-        background: #fafafa;
+        font-size: x-large;
+        font-weight: bold;
         border-radius: 5px;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        max-width: 800px;
-        margin-top: 3rem;
-      }
-
-      .card {
-        margin: 1rem;
-        flex-basis: 45%;
-        padding: 1.5rem;
-        text-align: left;
-        color: inherit;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
-      }
-
-      .card:hover,
-      .card:focus,
-      .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
-      }
-
-      .card h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 600px) {
-        .grid {
-          width: 100%;
-          flex-direction: column;
-        }
+        padding: 8px;
+        margin-top:1.25rem;
       }
     `}</style>
 
     <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-
+          @import url('https://fonts.googleapis.com/css?family=Amiri&display=swap');
       * {
         box-sizing: border-box;
       }
+
+      body {
+        background-color: #192a56;
+        color: #fff;
+        font-family: 'Amiri';
+        flex-direction: column;
+        display: flex;
+        margin: 0;
+      }
     `}</style>
-  </div>
-)
+
+    </div>
+  );
+}
+
+const CountryDetail = (props) => {
+  const { companyName,dir } = props;
+  return (
+    <>
+      <Link href={`../company/${dir}`}>
+        <a>{companyName}</a>
+      </Link>
+      <style jsx>{`
+      section{
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 1.4rem;
+      }
+
+      h2{
+        font-size: xx-large;
+
+      }
+
+      a{
+        text-decoration: none;
+        color: black;
+        background: #fff;
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 8px;
+        margin-top:1.25rem;
+        max-width:70%;
+      }
+    `}</style>
+    </>
+  );
+};
+
+
 
 export default Home

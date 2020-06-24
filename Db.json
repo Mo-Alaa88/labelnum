@@ -1,0 +1,103 @@
+[
+    {
+        "id":0,
+        "companyName":" مصلحة الضرائب المصرية مأمورية دمياط 1",
+        "city":"دمياط",
+        "address":"",
+        "turn":"الخازينة",
+        "url":"asqdsf",
+        "dir":"taxes/egy_taxes_1",
+        "admin":"مشرف",
+        "dirAdmin":"taxes/egy_taxes_1rytuiyqgedjknb"
+
+    },
+    {
+        "id":1,
+        "companyName":"د/محمد محمود احمد نساء وتوليد",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"klhioh",
+        "dir":"DR/Obstetrics&Gynecology/MohamedMahmoudAhmed",
+        "admin":"مشرف",
+        "dirAdmin":"DR/Obstetrics&Gynecology/MohamedMahmoudAhmed_nuieyif"
+    },
+    {
+        "id":2,
+        "companyName":"د/زكريا عزمي احمد نساء وتوليد",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"zcsc",
+        "dir":"DR/Obstetrics&Gynecology/ZkariaAzmiAhmed",
+        "admin":"مشرف",
+        "dirAdmin":"DR/Obstetrics&Gynecology/ZkariaAzmiAhmed_khyrrs9"
+    },
+    {
+        "id":3,
+        "companyName":"د/عباس احمد محمود نساء وتوليد",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"vjghjgi",
+        "dir":"DR/Obstetrics&Gynecology/AbasAhmedMahmoud",
+        "admin":"مشرف",
+        "dirAdmin":"DR/Obstetrics&Gynecology/AbasAhmedMahmoud_niugtdt"
+    },
+    {
+        "id":4,
+        "companyName":"د/هناء محمد عياد اطفال",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"zxvst",
+        "dir":"DR/Pediatrician/HanaaMohamedAiaad",
+        "admin":"مشرف",
+        "dirAdmin":"DR/Pediatrician/HanaaMohamedAiaad_mb6775"
+    },
+    {
+        "id":5,
+        "companyName":"د/ميرنا ياسر محمود اطفال",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"zcdst",
+        "dir":"DR/Pediatrician/MirnaYaserMahmoud",
+        "admin":"مشرف",
+        "dirAdmin":"DR/Pediatrician/MirnaYaserMahmoud_lnnyuurr8"
+    },
+    {
+        "id":6,
+        "companyName":"د/ميرال محمود رافع اطفال",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"mnkj",
+        "dir":"DR/Pediatrician/",
+        "admin":"مشرف",
+        "dirAdmin":"DR/Pediatrician/"
+    },
+    {
+        "id":7,
+        "companyName":"د/اسماء احمد فتحي علاج طبيعي",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"xvgeryt",
+        "dir":"DR/",
+        "admin":"مشرف",
+        "dirAdmin":"DR/"
+    },
+    {
+        "id":8,
+        "companyName":"د/محمد احمد فتحي علاج طبيعي",
+        "city":"",
+        "address":"",
+        "turn":"",
+        "url":"nmyug",
+        "dir":"DR/",
+        "admin":"مشرف",
+        "dirAdmin":"DR/"
+    }
+    
+]
