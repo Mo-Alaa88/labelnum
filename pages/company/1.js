@@ -1,9 +1,9 @@
 import Head from "next/head"
 import React,{useState, useEffect} from 'react'
-import Nav from "../../../component/nav";
-import DbData from "../../../Db.json"
-import StaticDBAR from "../../../StaticDBAR.json";
-import Footer from "../../../component/Footer";
+import Nav from "../../component/nav";
+import DbData from "../../Db.json"
+import StaticDBAR from "../../StaticDBAR.json";
+import Footer from "../../component/Footer";
 const egy_taxes_0 = ()=>{
   const [hasError, setErrors] = useState(false);
   const [number, setNumber] = useState({});
